@@ -18,39 +18,57 @@ import haconglinh1990.redmineandroid.fragment.Setting_Fragment;
  */
 
 
-public class TabAdapter extends FragmentStatePagerAdapter {
+public class TabAdapter extends FragmentPagerAdapter {
     private static final String MY_TAG = "message_from_meomeo";
     int numberOfTab;
+    ArrayList<Fragment> fragmentArrayList;
 
     public TabAdapter(FragmentManager fm, int numberOfTab) {
         super(fm);
         this.numberOfTab = numberOfTab;
     }
 
+    public TabAdapter (FragmentManager fm, ArrayList<Fragment> fragmentArrayList){
+        super(fm);
+        this.fragmentArrayList = fragmentArrayList;
+    }
+
+//    @Override
+//    public Fragment getItem(int position) {
+//        switch (position) {
+//            case 0:
+//                Log.d(MY_TAG, "on TabAdapter before create Project Fragment");
+//                Project_Fragment project_fragment = new Project_Fragment();
+//                Log.d(MY_TAG, "on TabAdapter after create Project Fragment");
+//                return project_fragment;
+//            case 1:
+//                MyTask_Fragment myTask_fragment = new MyTask_Fragment();
+//                return myTask_fragment;
+//            case 2:
+//                Filter_Fragment filter_fragment = new Filter_Fragment();
+//                return filter_fragment;
+//            case 3:
+//                Setting_Fragment setting_fragment = new Setting_Fragment();
+//                return setting_fragment;
+//            default:
+//                return null;
+//        }
+//    }
+//    @Override
+//    public int getCount() {
+//        return numberOfTab;
+//}
+//}
     @Override
     public Fragment getItem(int position) {
-        switch (position) {
-            case 0:
-                Log.d(MY_TAG, "on TabAdapter before create Project Fragment");
-                Project_Fragment project_fragment = new Project_Fragment();
-                Log.d(MY_TAG, "on TabAdapter after create Project Fragment");
-                return project_fragment;
-            case 1:
-                MyTask_Fragment myTask_fragment = new MyTask_Fragment();
-                return myTask_fragment;
-            case 2:
-                Filter_Fragment filter_fragment = new Filter_Fragment();
-                return filter_fragment;
-            case 3:
-                Setting_Fragment setting_fragment = new Setting_Fragment();
-                return setting_fragment;
-            default:
-                return null;
-        }
+        return fragmentArrayList.get(position);
     }
 
     @Override
     public int getCount() {
-        return numberOfTab;
+        return fragmentArrayList.size();
     }
+
+
+
 }

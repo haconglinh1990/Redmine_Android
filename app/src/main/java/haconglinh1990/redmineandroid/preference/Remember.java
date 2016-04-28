@@ -8,9 +8,10 @@ import android.content.SharedPreferences;
 
 
 public class Remember {
-    public static final  String PREFS_USER="user";
+    public static final String PREFS_USER="user";
     public static final String PREFS_USERNAME="username";
     public static final String PREFS_PASSWORD="password";
+
     public static final String PREFS_APIKEY="key";
     public static void saveUser(Context context,String username,String password){
         SharedPreferences preferences=context.getSharedPreferences(PREFS_USER,Context.MODE_PRIVATE);

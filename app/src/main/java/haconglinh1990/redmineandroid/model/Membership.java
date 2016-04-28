@@ -4,11 +4,12 @@ package haconglinh1990.redmineandroid.model;
  * Created by haconglinh1990 on 05/04/2016.
  */
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
+import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
 public class Membership {
@@ -24,54 +25,42 @@ public class Membership {
     private ArrayList<Role> roles = new ArrayList<Role>();
 
     /**
-     *
-     * @return
-     *     The id
+     * @return The id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     *
-     * @param id
-     *     The id
+     * @param id The id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     *
-     * @return
-     *     The project
+     * @return The project
      */
     public Project getProject() {
         return project;
     }
 
     /**
-     *
-     * @param project
-     *     The project
+     * @param project The project
      */
     public void setProject(Project project) {
         this.project = project;
     }
 
     /**
-     *
-     * @return
-     *     The roles
+     * @return The roles
      */
     public ArrayList<Role> getRoles() {
         return roles;
     }
 
     /**
-     *
-     * @param roles
-     *     The roles
+     * @param roles The roles
      */
     public void setRoles(ArrayList<Role> roles) {
         this.roles = roles;
