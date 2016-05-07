@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/bgcloud2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="haconglinh1990.redmineandroid.activity.IssueInProjectList">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarIssueInProjectListActivity"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/icon_plus"
+            android:id="@+id/icon_plus_issue"
+            android:layout_alignBottom="@+id/toolbarIssueInProjectListActivity"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/icon_search2"
+            android:id="@+id/icon_search_issue"
+            android:layout_alignBottom="@+id/toolbarIssueInProjectListActivity"
+            android:layout_toStartOf="@+id/icon_plus_issue" />
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/icon_arrow_left7"
+            android:id="@+id/imageView2"
+            android:layout_alignBottom="@+id/toolbarIssueInProjectListActivity"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:text="All Project"
+            android:layout_below="@+id/toolbarIssueInProjectListActivity"
+            android:layout_alignStart="@+id/imageView2"
+            android:layout_alignParentEnd="true" />
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/editText">
+
+        </android.support.v4.view.ViewPager>
+
+
+    </RelativeLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

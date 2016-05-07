@@ -2,8 +2,6 @@ package haconglinh1990.redmineandroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -12,12 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import haconglinh1990.redmineandroid.API.APIClient;
 import haconglinh1990.redmineandroid.R;
 import haconglinh1990.redmineandroid.adapter.TabAdapter;
 import haconglinh1990.redmineandroid.fragment.Filter_Fragment;
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(MY_TAG, "onCreate MainActivity before set toolbar");
-        toolbar= (Toolbar) findViewById(R.id.toolbarMainActivity);
+        toolbar = (Toolbar) findViewById(R.id.toolbarMainActivity);
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
         setSupportActionBar(toolbar);

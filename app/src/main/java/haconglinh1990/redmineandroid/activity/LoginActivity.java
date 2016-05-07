@@ -3,17 +3,15 @@ package haconglinh1990.redmineandroid.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
 
 import haconglinh1990.redmineandroid.API.APIClient;
 import haconglinh1990.redmineandroid.R;
 
-public class BeginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private static final String MY_TAG = "message_from_meomeo";
     String address, userName, passWord;
     EditText etAddress,etUserName, etPassWord;
@@ -39,16 +37,16 @@ public class BeginActivity extends AppCompatActivity {
         //passWord = etPassWord.getText().toString();
         //address = "http://" + etAddress.getText().toString() + "/users/current.json";
 
-        new APIClient(BeginActivity.this).logInUseAPI(address, userName, passWord);
+        new APIClient(LoginActivity.this).logInUseAPI(address, userName, passWord);
 
     }
     public void clickButtonRegister(View v){
-        startActivity(new Intent(BeginActivity.this, RegisterActivity.class));
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
 
     }
 
     public void clickButtonForgotPassWord(View v) {
-        startActivity(new Intent(BeginActivity.this, ForgotPassWordActivity.class));
+        startActivity(new Intent(LoginActivity.this, ForgotPassWordActivity.class));
 
     }
     @Override
