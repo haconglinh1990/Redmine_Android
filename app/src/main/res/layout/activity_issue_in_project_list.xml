@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:background="@drawable/bgcloud2"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="haconglinh1990.redmineandroid.activity.IssueInProjectList">
+    tools:context=".activities.IssueInProjectActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
