@@ -12,36 +12,45 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import haconglinh1990.redmineandroid.api.APIClient;
+import haconglinh1990.redmineandroid.models.Project;
+import haconglinh1990.redmineandroid.network.api.APIClient;
 import haconglinh1990.redmineandroid.R;
 import haconglinh1990.redmineandroid.adapters.RecyclerViewProjectAdapter;
-import haconglinh1990.redmineandroid.models.Project;
+import haconglinh1990.redmineandroid.network.response.ProjectCallBack;
 
 public class ProjectFragment extends Fragment {
     private static final String MY_TAG = "message_from_meomeo";
 
     RecyclerView recyclerView;
-    public static ArrayList<Project> projectList;
-    public static RecyclerViewProjectAdapter recyclerViewProjectAdapter;
+
+    private static RecyclerViewProjectAdapter recyclerViewProjectAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d(MY_TAG, "onActivityCreated Project Fragment before call API");
-        projectList = new APIClient(getContext()).getProjectofCurentUser();
+
         Log.d(MY_TAG, "onActivityCreated Project Fragment after call API, before put to adapter");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        Log.d(MY_TAG, "onActivityCreated Project Fragment before call API");
+        new APIClient(getContext()).getProjectofCurentUser(new ProjectCallBack() {
+            @Override
+            public void onCompleted(int statusCode, ArrayList<Project> projectArrayList) {
+                if (projectArrayList == null) {
+                    Log.d(MY_TAG, "projectArrayList in ProjectFragment is null, fuck off");
+                } else {
+                    recyclerViewProjectAdapter = new RecyclerViewProjectAdapter(getContext(), projectArrayList);
+                }
+            }
+        });
         Log.d(MY_TAG, "onCreateView Project Fragment");
         View view = inflater.inflate(R.layout.project_layout, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewProject);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerViewProjectAdapter = new RecyclerViewProjectAdapter(getContext(), projectList);
         recyclerView.setAdapter(recyclerViewProjectAdapter);
 
         /*LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());

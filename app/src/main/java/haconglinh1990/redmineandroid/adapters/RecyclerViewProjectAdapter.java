@@ -17,12 +17,12 @@ import haconglinh1990.redmineandroid.viewholder.ProjectViewHolder;
  */
 public class RecyclerViewProjectAdapter extends RecyclerView.Adapter<ProjectViewHolder>{
     Context context;
-    ArrayList<Project> projectList;
+    ArrayList<Project> projectArrayList;
     Project project;
 
-    public RecyclerViewProjectAdapter(Context context, ArrayList<Project> projectList) {
+    public RecyclerViewProjectAdapter(Context context, ArrayList<Project> projectArrayList) {
         this.context = context;
-        this.projectList = projectList;
+        this.projectArrayList = projectArrayList;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class RecyclerViewProjectAdapter extends RecyclerView.Adapter<ProjectView
 
     @Override
     public void onBindViewHolder(ProjectViewHolder holder, int position) {
-        project = projectList.get(position);
+        project = projectArrayList.get(position);
         holder.viewIconProject.setImageResource(R.drawable.icon_finish);
         holder.viewNameProject.setText(project.getName());
 
@@ -43,6 +43,6 @@ public class RecyclerViewProjectAdapter extends RecyclerView.Adapter<ProjectView
 
     @Override
     public int getItemCount() {
-        return projectList.size();
+        return projectArrayList.size();
     }
 }

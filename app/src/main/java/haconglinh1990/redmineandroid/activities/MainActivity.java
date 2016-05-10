@@ -11,23 +11,19 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import haconglinh1990.redmineandroid.R;
 import haconglinh1990.redmineandroid.adapters.FragmentAdapter;
 import haconglinh1990.redmineandroid.fragments.FilterFragment;
 import haconglinh1990.redmineandroid.fragments.MyTaskFragment;
 import haconglinh1990.redmineandroid.fragments.ProjectFragment;
 import haconglinh1990.redmineandroid.fragments.SettingFragment;
-import haconglinh1990.redmineandroid.models.Project;
 
 public class MainActivity extends AppCompatActivity {
     private static final String MY_TAG = "message_from_meomeo";
     ViewPager viewPager;
     TabLayout tabLayout;
     Toolbar toolbar;
-    ArrayList<Project> projectList;
 
     FragmentAdapter fragmentAdapter;
 

@@ -6,6 +6,9 @@ package haconglinh1990.redmineandroid.ultils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import haconglinh1990.redmineandroid.network.response.APIKeyCallback;
+import haconglinh1990.redmineandroid.network.response.UserCallback;
+
 
 public class Remember {
     public static final String PREFS_USER="user";
@@ -13,37 +16,37 @@ public class Remember {
     public static final String PREFS_PASSWORD="password";
 
     public static final String PREFS_APIKEY="key";
-    public static void saveUser(Context context,String username,String password){
-        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER,Context.MODE_PRIVATE);
+    public static void saveUser(Context context,String username, String password){
+        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit=preferences.edit();
-        edit.putString(PREFS_USERNAME,username);
-        edit.putString(PREFS_PASSWORD,password);
+        edit.putString(PREFS_USERNAME, username);
+        edit.putString(PREFS_PASSWORD, password);
         edit.commit();
     }
-    public static void restoreUser(Context context,RememberCallback callback){
-        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER,Context.MODE_PRIVATE);
-        String username=preferences.getString(PREFS_USERNAME,"");
-        String password=preferences.getString(PREFS_PASSWORD,"");
+    public static void restoreUser(Context context, UserCallback userCallback){
+        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER, Context.MODE_PRIVATE);
+        String username=preferences.getString(PREFS_USERNAME, "");
+        String password=preferences.getString(PREFS_PASSWORD, "");
         boolean check=false;
         if (!username.isEmpty() && !password.isEmpty()){
             check=true;
-            callback.User(username,password,check);
+            userCallback.User(username, password,check);
         }else {
             check=false;
-            callback.User(null,null,check);
+            userCallback.User(null,null,check);
         }
 
     }
-    public static void saveApiKey(Context context,String apiKey){
-        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER,Context.MODE_PRIVATE);
+    public static void saveApiKey(Context context, String apiKey){
+        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER, Context.MODE_PRIVATE);
         SharedPreferences.Editor edit=preferences.edit();
         edit.putString(PREFS_APIKEY,apiKey);
         edit.commit();
     }
 
 
-    public static void restoreApiKey(Context context,APIKeyCallback callback){
-        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER,Context.MODE_PRIVATE);
+    public static void restoreApiKey(Context context, APIKeyCallback callback){
+        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER, Context.MODE_PRIVATE);
         String apiKey=preferences.getString(PREFS_APIKEY,"");
         if (apiKey != null) {
             callback.Key(apiKey);
@@ -52,7 +55,7 @@ public class Remember {
         }
     }
     public static String apiKey(Context context){
-        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER,Context.MODE_PRIVATE);
+        SharedPreferences preferences=context.getSharedPreferences(PREFS_USER, Context.MODE_PRIVATE);
         String apiKey=preferences.getString(PREFS_APIKEY,"");
         return apiKey;
     }

@@ -1,43 +1,51 @@
+
 package haconglinh1990.redmineandroid.models;
 
+import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import javax.annotation.Generated;
 
 @Generated("org.jsonschema2pojo")
 public class Priority {
 
     @SerializedName("id")
     @Expose
-    private int id;
+    private Integer id;
     @SerializedName("name")
     @Expose
     private String name;
 
     /**
-     * @return The id
+     * 
+     * @return
+     *     The id
      */
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
     /**
-     * @param id The id
+     * 
+     * @param id
+     *     The id
      */
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * @return The name
+     * 
+     * @return
+     *     The name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * @param name The name
+     * 
+     * @param name
+     *     The name
      */
     public void setName(String name) {
         this.name = name;

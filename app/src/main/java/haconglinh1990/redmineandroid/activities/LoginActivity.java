@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import haconglinh1990.redmineandroid.api.APIClient;
+import haconglinh1990.redmineandroid.network.api.APIClient;
 import haconglinh1990.redmineandroid.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
         userName = "linhhc";
         passWord = "linh@123";
-        address = "http://192.168.1.59/users/current.json";
+        address = "http://192.168.1.51/users/current.json";
         //userName = etUserName.getText().toString();
         //passWord = etPassWord.getText().toString();
         //address = "http://" + etAddress.getText().toString() + "/users/current.json";
