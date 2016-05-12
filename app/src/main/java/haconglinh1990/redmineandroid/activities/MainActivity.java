@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(MY_TAG, "onCreate MainActivity before set toolbar");
+        //Log.d(MY_TAG, "onCreate MainActivity before set toolbar");
         toolbar = (Toolbar) findViewById(R.id.toolbarMainActivity);
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("My Task"));
         tabLayout.addTab(tabLayout.newTab().setText("Filter"));
         tabLayout.addTab(tabLayout.newTab().setText("Setting"));
-        Log.d(MY_TAG, "onCreate MainActivity after set toolbar, before connect with API!!!");
+        //Log.d(MY_TAG, "onCreate MainActivity after set toolbar, before connect with API!!!");
 
         //projectList = new APIClient(MainActivity.this).getProjectofCurentUser();
 
@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
         fragmentArrayList.add(new SettingFragment());
         fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), fragmentArrayList);
 
-        Log.d(MY_TAG, "onCreate MainActivity after connect with API get project List back, before connect with API!!!");
+        //Log.d(MY_TAG, "onCreate MainActivity after connect with API get project List back, before connect with API!!!");
         //fragmentAdapter = new FragmentAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
 
-        Log.d(MY_TAG, "onCreate MainActivity after create adapter, before set adapter !!!");
+        //Log.d(MY_TAG, "onCreate MainActivity after create adapter, before set adapter !!!");
 
         viewPager = (ViewPager) findViewById(R.id.viewPagerMainActivity);
         viewPager.setAdapter(fragmentAdapter);

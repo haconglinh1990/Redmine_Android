@@ -28,10 +28,10 @@ import haconglinh1990.redmineandroid.network.response.UserCallback;
  */
 public class APIClient {
     public static final String MY_TAG = "message_from_meomeo";
-    public static final String API_BASE_URL = "http://192.168.1.51/";
+    public static final String API_BASE_URL = "http://192.168.1.59/";
     public static final String API_USER = API_BASE_URL + "users/current.json";
     public static final String API_ALL_PROJECT = API_BASE_URL + "projects.json";
-    public static final String API_ALL_ISSUSE = API_USER + "?include=issues&key=";
+    public static final String API_ALL_ISSUSE = API_BASE_URL + "issues.json";
     //private String username_restore, password_restore;
 
     Context context;
@@ -59,10 +59,10 @@ public class APIClient {
                             Remember.saveUser(context, username, password);
                             Remember.saveApiKey(context, apiKey);
                             Toast.makeText(context, "Login successfull !!!", Toast.LENGTH_SHORT).show();
-                            Log.v(MY_TAG, "APIKey is: " + apiKey + ", Username: " + username + ", Password: " + password);
+                            //Log.v(MY_TAG, "APIKey is: " + apiKey + ", Username: " + username + ", Password: " + password);
                             context.startActivity(new Intent(context, MainActivity.class));
                         } else {
-                            Log.v(MY_TAG, "Status is not 200 or APIKey is null");
+                            //Log.v(MY_TAG, "Status is not 200 or APIKey is null");
                             Toast.makeText(context, "Error Login, wrong username or password", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -73,12 +73,12 @@ public class APIClient {
     public void getProjectofCurentUser(final ProjectCallBack projectCallBack) {
         //String username_restore, password_restore;
         //ArrayList<Project> projectList = new ArrayList<>();
-        Log.d(MY_TAG, "In getProjectofCurentUser API");
+        //Log.d(MY_TAG, "In getProjectofCurentUser API");
 
         Remember.restoreUser(context, new UserCallback() {
             @Override
             public void User(String username, String password, boolean check) {
-                Log.v(MY_TAG, "In getProjectofCurentUser, Username: " + username + ", Password: " + password + ", Check: " + check);
+                //Log.v(MY_TAG, "In getProjectofCurentUser, Username: " + username + ", Password: " + password + ", Check: " + check);
                 if (check == true) {
 
                     Ion.with(context).load(API_ALL_PROJECT).basicAuthentication(username, password)
@@ -92,19 +92,19 @@ public class APIClient {
                             ProjectObjectModel projectObjectModel = gson.fromJson(result.getResult(), ProjectObjectModel.class);
 
                             if (status == 200) {
-                                Log.v(MY_TAG, "Get project with apikey saved from Server successfull");
+                                //Log.v(MY_TAG, "Get project with apikey saved from Server successfull");
                                 projectCallBack.onCompleted(status, projectObjectModel.getProjects());
 
                             } else {
-                                Log.v(MY_TAG, "Status is not 200. Can't get project from Server");
+                                //Log.v(MY_TAG, "Status is not 200. Can't get project from Server");
                                 projectCallBack.onCompleted(status, null);
                             }
                         }
                     });
 
-                    Log.d(MY_TAG, "Username: " + username + " ,Pass: " + password);
+                    //Log.d(MY_TAG, "Username: " + username + " ,Pass: " + password);
                 } else {
-                    Log.d(MY_TAG, "Can not get username, pass");
+                    //Log.d(MY_TAG, "Can not get username, pass");
                 }
             }
         });
@@ -115,11 +115,12 @@ public class APIClient {
     public void getIssues(final String urlQuery, final IssueCallBack issueCallBack) {
 //        issueList = new ArrayList<>();
 //        issuesObjectModel = new IssuesObjectModel();
-        Log.d(MY_TAG, "In getIssuesofCurentUser API");
+
 
         Remember.restoreUser(context, new UserCallback() {
             @Override
             public void User(String username, String password, boolean check) {
+                Log.d(MY_TAG, "In getIssuesofCurentUser API, Username = " + username + ", Password: " + password + ", Check: " + check);
                 if (check == true) {
 
                     Ion.with(context).load(urlQuery).basicAuthentication(username, password)

@@ -26,6 +26,9 @@ public class Issue {
     @SerializedName("author")
     @Expose
     private Author author;
+    @SerializedName("assigned_to")
+    @Expose
+    private AssignedTo assignedTo;
     @SerializedName("subject")
     @Expose
     private String subject;
@@ -35,30 +38,21 @@ public class Issue {
     @SerializedName("start_date")
     @Expose
     private String startDate;
+    @SerializedName("due_date")
+    @Expose
+    private String dueDate;
     @SerializedName("done_ratio")
     @Expose
     private Integer doneRatio;
+    @SerializedName("estimated_hours")
+    @Expose
+    private Double estimatedHours;
     @SerializedName("created_on")
     @Expose
     private String createdOn;
     @SerializedName("updated_on")
     @Expose
     private String updatedOn;
-    @SerializedName("assigned_to")
-    @Expose
-    private AssignedTo assignedTo;
-    @SerializedName("due_date")
-    @Expose
-    private String dueDate;
-    @SerializedName("fixed_version")
-    @Expose
-    private FixedVersion fixedVersion;
-    @SerializedName("parent")
-    @Expose
-    private Parent parent;
-    @SerializedName("estimated_hours")
-    @Expose
-    private Double estimatedHours;
 
     /**
      * 
@@ -171,6 +165,24 @@ public class Issue {
     /**
      * 
      * @return
+     *     The assignedTo
+     */
+    public AssignedTo getAssignedTo() {
+        return assignedTo;
+    }
+
+    /**
+     * 
+     * @param assignedTo
+     *     The assigned_to
+     */
+    public void setAssignedTo(AssignedTo assignedTo) {
+        this.assignedTo = assignedTo;
+    }
+
+    /**
+     * 
+     * @return
      *     The subject
      */
     public String getSubject() {
@@ -225,6 +237,24 @@ public class Issue {
     /**
      * 
      * @return
+     *     The dueDate
+     */
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    /**
+     * 
+     * @param dueDate
+     *     The due_date
+     */
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    /**
+     * 
+     * @return
      *     The doneRatio
      */
     public Integer getDoneRatio() {
@@ -238,6 +268,24 @@ public class Issue {
      */
     public void setDoneRatio(Integer doneRatio) {
         this.doneRatio = doneRatio;
+    }
+
+    /**
+     * 
+     * @return
+     *     The estimatedHours
+     */
+    public Double getEstimatedHours() {
+        return estimatedHours;
+    }
+
+    /**
+     * 
+     * @param estimatedHours
+     *     The estimated_hours
+     */
+    public void setEstimatedHours(Double estimatedHours) {
+        this.estimatedHours = estimatedHours;
     }
 
     /**
@@ -274,96 +322,6 @@ public class Issue {
      */
     public void setUpdatedOn(String updatedOn) {
         this.updatedOn = updatedOn;
-    }
-
-    /**
-     * 
-     * @return
-     *     The assignedTo
-     */
-    public AssignedTo getAssignedTo() {
-        return assignedTo;
-    }
-
-    /**
-     * 
-     * @param assignedTo
-     *     The assigned_to
-     */
-    public void setAssignedTo(AssignedTo assignedTo) {
-        this.assignedTo = assignedTo;
-    }
-
-    /**
-     * 
-     * @return
-     *     The dueDate
-     */
-    public String getDueDate() {
-        return dueDate;
-    }
-
-    /**
-     * 
-     * @param dueDate
-     *     The due_date
-     */
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    /**
-     * 
-     * @return
-     *     The fixedVersion
-     */
-    public FixedVersion getFixedVersion() {
-        return fixedVersion;
-    }
-
-    /**
-     * 
-     * @param fixedVersion
-     *     The fixed_version
-     */
-    public void setFixedVersion(FixedVersion fixedVersion) {
-        this.fixedVersion = fixedVersion;
-    }
-
-    /**
-     * 
-     * @return
-     *     The parent
-     */
-    public Parent getParent() {
-        return parent;
-    }
-
-    /**
-     * 
-     * @param parent
-     *     The parent
-     */
-    public void setParent(Parent parent) {
-        this.parent = parent;
-    }
-
-    /**
-     * 
-     * @return
-     *     The estimatedHours
-     */
-    public Double getEstimatedHours() {
-        return estimatedHours;
-    }
-
-    /**
-     * 
-     * @param estimatedHours
-     *     The estimated_hours
-     */
-    public void setEstimatedHours(Double estimatedHours) {
-        this.estimatedHours = estimatedHours;
     }
 
 }

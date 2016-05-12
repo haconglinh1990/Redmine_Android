@@ -3,6 +3,7 @@ package haconglinh1990.redmineandroid.viewholder;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import haconglinh1990.redmineandroid.R;
@@ -12,13 +13,27 @@ import haconglinh1990.redmineandroid.R;
  */
 public class MyTaskViewHolder extends RecyclerView.ViewHolder {
 
-    public ImageView viewIconTracker, viewAvataUser, viewIconClock;
-    public TextView viewNameIssue, viewIdIssue, viewNameProject, viewStatus, viewPriority, viewNameUser, viewStartDate;
+    public ProgressBar progressBarIssue;
+    public ImageView viewIconTracker, viewIconUser, viewIconClock;
+    public TextView viewNameIssue, viewIdIssue, viewNameProject, viewVersionProject,
+            viewStatus, viewPriority, viewNameUser, viewDueDate, viewNumberPercent;
 
     public MyTaskViewHolder(View itemView) {
         super(itemView);
-        //viewIconProject = (ImageView) itemView.findViewById(R.id.icon_project);
-        viewNameProject = (TextView) itemView.findViewById(R.id.name_project);
+        viewIconUser = (ImageView) itemView.findViewById(R.id.card_view_imgv_icon_user);
+        viewIconTracker = (ImageView) itemView.findViewById(R.id.card_view_imgv_icon_tracker);
+        viewIconClock = (ImageView) itemView.findViewById(R.id.card_view_imgv_icon_clock);
 
+        progressBarIssue = (ProgressBar) itemView.findViewById(R.id.card_view_progressbar_issue);
+
+        viewNameIssue = (TextView) itemView.findViewById(R.id.card_view_tv_name_issue);
+        viewIdIssue = (TextView) itemView.findViewById(R.id.card_view_tv_id_issue);
+        viewStatus = (TextView) itemView.findViewById(R.id.card_view_tv_status_issue);
+        viewNameUser = (TextView) itemView.findViewById(R.id.card_view_tv_name_user);
+        viewPriority = (TextView) itemView.findViewById(R.id.card_view_tv_priority);
+        viewDueDate = (TextView) itemView.findViewById(R.id.card_view_tv_due_date);
+        viewNameProject = (TextView) itemView.findViewById(R.id.card_view_tv_name_project);
+        viewVersionProject = (TextView) itemView.findViewById(R.id.card_view_tv_version_project);
+        viewNumberPercent = (TextView) itemView.findViewById(R.id.card_view_tv_number_percent);
     }
 }

@@ -22,36 +22,28 @@ public class ProjectFragment extends Fragment {
     private static final String MY_TAG = "message_from_meomeo";
 
     RecyclerView recyclerView;
-
     private static RecyclerViewProjectAdapter recyclerViewProjectAdapter;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-        Log.d(MY_TAG, "onActivityCreated Project Fragment after call API, before put to adapter");
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.d(MY_TAG, "onActivityCreated Project Fragment before call API");
+        //Log.d(MY_TAG, "onActivityCreated Project Fragment before call API");
         new APIClient(getContext()).getProjectofCurentUser(new ProjectCallBack() {
             @Override
             public void onCompleted(int statusCode, ArrayList<Project> projectArrayList) {
                 if (projectArrayList == null) {
-                    Log.d(MY_TAG, "projectArrayList in ProjectFragment is null, fuck off");
+                    //Log.d(MY_TAG, "projectArrayList in ProjectFragment is null, fuck off");
                 } else {
                     recyclerViewProjectAdapter = new RecyclerViewProjectAdapter(getContext(), projectArrayList);
+                    recyclerView.setAdapter(recyclerViewProjectAdapter);
                 }
             }
         });
-        Log.d(MY_TAG, "onCreateView Project Fragment");
+        //Log.d(MY_TAG, "onCreateView Project Fragment");
         View view = inflater.inflate(R.layout.project_layout, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewProject);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(recyclerViewProjectAdapter);
+
 
         /*LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

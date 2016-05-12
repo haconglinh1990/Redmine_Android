@@ -5,19 +5,168 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
-    android:layout_marginTop="1dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
     card_view:cardCornerRadius="1dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
+   <TableLayout
+       android:layout_width="match_parent"
+       android:layout_height="90dp"
+       android:shrinkColumns="*"
+       android:stretchColumns="*"
+       android:layout_marginLeft="3dp"
+       android:layout_marginRight="3dp">
+
+       <TableRow>
+           <TextView
+               android:id="@+id/card_view_tv_name_issue"
+               android:layout_width="match_parent"
+               android:layout_height="30dp"
+               android:layout_span="3"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:gravity="center_vertical"
+               android:textSize="17sp"
+               android:textStyle="bold"
+               android:textColor="#000000" />
+       </TableRow>
+
+       <TableRow>
+           <TextView
+               android:id="@+id/card_view_tv_id_issue"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#ff0000"
+               />
+
+           <TextView
+               android:id="@+id/card_view_tv_status_issue"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#000000" />
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:orientation="horizontal"
+               android:layout_weight="1">
+
+               <ImageView
+                   android:id="@+id/card_view_imgv_icon_user"
+                   android:layout_width="20dp"
+                   android:layout_height="20dp"/>
+
+               <TextView
+                   android:id="@+id/card_view_tv_name_user"
+                   android:layout_width="match_parent"
+                   android:layout_height="20dp"
+                   android:ellipsize="end"
+                   android:maxLines="1"
+                   android:singleLine="true"
+                   android:textColor="#000000" />
+           </LinearLayout>
 
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></TableLayout>
-    </LinearLayout>
+       </TableRow>
+
+       <TableRow>
+           <ImageView
+               android:id="@+id/card_view_imgv_icon_tracker"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"/>
+
+           <TextView
+               android:id="@+id/card_view_tv_priority"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#000000" />
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1">
+               <ImageView
+                   android:id="@+id/card_view_imgv_icon_clock"
+                   android:layout_width="19dp"
+                   android:layout_height="19dp"
+                   android:layout_gravity="center_vertical"/>
+
+               <TextView
+                   android:id="@+id/card_view_tv_due_date"
+                   android:layout_height="20dp"
+                   android:layout_width="match_parent"
+                   android:text="Dua date"
+                   android:textColor="#000000" />
+           </LinearLayout>
+       </TableRow>
+
+       <TableRow>
+           <TextView
+               android:id="@+id/card_view_tv_name_project"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#000000" />
+
+           <TextView
+               android:id="@+id/card_view_tv_version_project"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#000000" />
+
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:orientation="horizontal">
+               <ProgressBar
+                   android:id="@+id/card_view_progressbar_issue"
+                   android:layout_width="60dp"
+                   android:layout_height="20dp"
+                   android:indeterminate="false"
+                   android:progress="1"
+                   style="?android:attr/progressBarStyleHorizontal"/>
+
+               <TextView
+                   android:id="@+id/card_view_tv_number_percent"
+                   android:layout_height="20dp"
+                   android:layout_width="match_parent"
+                   android:text="10%"
+                   android:textColor="#000000" />
+           </LinearLayout>
+
+
+
+       </TableRow>
+
+    </TableLayout>
+
 </android.support.v7.widget.CardView>

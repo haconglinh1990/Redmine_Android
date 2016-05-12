@@ -25,14 +25,6 @@ public class MyTaskFragment extends Fragment {
     public static RecyclerViewMyTaskAdapter recyclerViewMyTaskAdapter;
     RecyclerView recyclerView;
 
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -43,19 +35,27 @@ public class MyTaskFragment extends Fragment {
                 if (issueArrayList == null) {
                     Log.d(MY_TAG, "issueArrayList in MyTaskFragment is null, fuck off");
                 } else {
-                    Log.d(MY_TAG, "onCreate MyTaskFragment after call API, before put to adapter");
+                    Log.d(MY_TAG, "onCreate MyTaskFragment after call API, before put to adapter: " + issueArrayList.size());
                     recyclerViewMyTaskAdapter = new RecyclerViewMyTaskAdapter(getContext(), issueArrayList);
+                    recyclerView.setAdapter(recyclerViewMyTaskAdapter);
                 }
             }
         });
         // Inflate the layout for this fragment
-        Log.d(MY_TAG, "onCreateView Project Fragment");
-        View view = inflater.inflate(R.layout.project_layout, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewProject);
+        //Log.d(MY_TAG, "onCreateView Project Fragment");
+        View view = inflater.inflate(R.layout.mytask_layout, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewMyTask);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        recyclerView.setAdapter(recyclerViewMyTaskAdapter);
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+
+        super.onActivityCreated(savedInstanceState);
+
+
     }
 }
