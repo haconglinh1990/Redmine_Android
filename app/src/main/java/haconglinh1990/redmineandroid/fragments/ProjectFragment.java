@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import haconglinh1990.redmineandroid.network.api.APIClient;
 import haconglinh1990.redmineandroid.R;
 import haconglinh1990.redmineandroid.adapters.RecyclerViewProjectAdapter;
 import haconglinh1990.redmineandroid.network.response.ProjectCallBack;
+import haconglinh1990.redmineandroid.ultils.ProjectItemClickListener;
 
 public class ProjectFragment extends Fragment {
     private static final String MY_TAG = "message_from_meomeo";

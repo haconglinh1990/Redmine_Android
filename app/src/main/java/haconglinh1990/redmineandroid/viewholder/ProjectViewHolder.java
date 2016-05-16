@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import haconglinh1990.redmineandroid.R;
+import haconglinh1990.redmineandroid.models.Project;
 
 /**
  * Created by haconglinh1990 on 14/04/2016.

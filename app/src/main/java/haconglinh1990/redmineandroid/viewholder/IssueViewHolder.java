@@ -11,14 +11,14 @@ import haconglinh1990.redmineandroid.R;
 /**
  * Created by haconglinh1990 on 22/04/2016.
  */
-public class MyTaskViewHolder extends RecyclerView.ViewHolder {
+public class IssueViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     public ProgressBar progressBarIssue;
     public ImageView viewIconTracker, viewIconUser, viewIconClock;
     public TextView viewNameIssue, viewIdIssue, viewNameProject, viewVersionProject,
-            viewStatus, viewPriority, viewNameUser, viewDueDate, viewNumberPercent;
+            viewStatus, viewPriority, viewNameUserAssigned, viewDueDate, viewNumberPercent;
 
-    public MyTaskViewHolder(View itemView) {
+    public IssueViewHolder(View itemView) {
         super(itemView);
         viewIconUser = (ImageView) itemView.findViewById(R.id.card_view_imgv_icon_user);
         viewIconTracker = (ImageView) itemView.findViewById(R.id.card_view_imgv_icon_tracker);
@@ -29,11 +29,16 @@ public class MyTaskViewHolder extends RecyclerView.ViewHolder {
         viewNameIssue = (TextView) itemView.findViewById(R.id.card_view_tv_name_issue);
         viewIdIssue = (TextView) itemView.findViewById(R.id.card_view_tv_id_issue);
         viewStatus = (TextView) itemView.findViewById(R.id.card_view_tv_status_issue);
-        viewNameUser = (TextView) itemView.findViewById(R.id.card_view_tv_name_user);
+        viewNameUserAssigned = (TextView) itemView.findViewById(R.id.card_view_tv_name_user_assigned);
         viewPriority = (TextView) itemView.findViewById(R.id.card_view_tv_priority);
         viewDueDate = (TextView) itemView.findViewById(R.id.card_view_tv_due_date);
         viewNameProject = (TextView) itemView.findViewById(R.id.card_view_tv_name_project);
         viewVersionProject = (TextView) itemView.findViewById(R.id.card_view_tv_version_project);
         viewNumberPercent = (TextView) itemView.findViewById(R.id.card_view_tv_number_percent);
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

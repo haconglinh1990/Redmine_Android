@@ -69,7 +69,7 @@
                    android:layout_height="20dp"/>
 
                <TextView
-                   android:id="@+id/card_view_tv_name_user"
+                   android:id="@+id/card_view_tv_name_user_assigned"
                    android:layout_width="match_parent"
                    android:layout_height="20dp"
                    android:ellipsize="end"

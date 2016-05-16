@@ -31,7 +31,7 @@ public class APIClient {
     public static final String API_BASE_URL = "http://192.168.1.59/";
     public static final String API_USER = API_BASE_URL + "users/current.json";
     public static final String API_ALL_PROJECT = API_BASE_URL + "projects.json";
-    public static final String API_ALL_ISSUSE = API_BASE_URL + "issues.json";
+    public static final String API_ALL_ISSUSE_CURENT_USER_ASSIGNEE = API_BASE_URL + "issues.json?assigned_to_id=me";
     //private String username_restore, password_restore;
 
     Context context;

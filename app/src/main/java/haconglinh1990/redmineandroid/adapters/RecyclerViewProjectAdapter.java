@@ -1,6 +1,8 @@
 package haconglinh1990.redmineandroid.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +11,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import haconglinh1990.redmineandroid.R;
+import haconglinh1990.redmineandroid.activities.IssueInProjectActivity;
 import haconglinh1990.redmineandroid.models.Project;
+import haconglinh1990.redmineandroid.ultils.ProjectItemClickListener;
 import haconglinh1990.redmineandroid.viewholder.ProjectViewHolder;
 
 /**
@@ -38,6 +42,18 @@ public class RecyclerViewProjectAdapter extends RecyclerView.Adapter<ProjectView
         project = projectArrayList.get(position);
         holder.viewIconProject.setImageResource(R.drawable.icon_finish);
         holder.viewNameProject.setText(project.getName());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, IssueInProjectActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("projectId", project.getId());
+                intent.putExtra("bundleData", bundle);
+                context.startActivity(intent);
+
+            }
+        });
 
     }
 

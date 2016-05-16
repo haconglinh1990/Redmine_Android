@@ -3,7 +3,6 @@ package haconglinh1990.redmineandroid.adapters;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,31 +14,30 @@ import java.util.ArrayList;
 
 import haconglinh1990.redmineandroid.R;
 import haconglinh1990.redmineandroid.models.Issue;
-import haconglinh1990.redmineandroid.network.api.APIClient;
-import haconglinh1990.redmineandroid.viewholder.MyTaskViewHolder;
+import haconglinh1990.redmineandroid.viewholder.IssueViewHolder;
 
 
 /**
  * Created by haconglinh1990 on 22/04/2016.
  */
-public class RecyclerViewMyTaskAdapter extends RecyclerView.Adapter<MyTaskViewHolder>{
+public class RecyclerViewIssueAdapter extends RecyclerView.Adapter<IssueViewHolder>{
     Context context;
     ArrayList<Issue> issuesList;
     Issue issues;
 
-    public RecyclerViewMyTaskAdapter(Context context, ArrayList<Issue> issuesList) {
+    public RecyclerViewIssueAdapter(Context context, ArrayList<Issue> issuesList) {
         this.context = context;
         this.issuesList = issuesList;
     }
 
     @Override
-    public MyTaskViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public IssueViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.cardview_issue_list, parent, false);
-        return new MyTaskViewHolder(view);
+        return new IssueViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MyTaskViewHolder holder, int position) {
+    public void onBindViewHolder(IssueViewHolder holder, int position) {
         int color, textColor;
         issues = issuesList.get(position);
 
@@ -72,7 +70,7 @@ public class RecyclerViewMyTaskAdapter extends RecyclerView.Adapter<MyTaskViewHo
         }
 
         holder.viewPriority.setTextColor(textColor);
-        holder.viewNameUser.setText(" " + issues.getAuthor().getName());
+        holder.viewNameUserAssigned.setText(" " + issues.getAssignedTo().getName());
         holder.viewPriority.setText("  " + issues.getPriority().getName());
         holder.viewDueDate.setText(" " + issues.getDueDate());
         holder.viewNameProject.setText(issues.getProject().getName());
