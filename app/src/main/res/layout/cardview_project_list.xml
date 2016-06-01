@@ -8,9 +8,11 @@
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
     android:layout_marginTop="5dp"
+
     card_view:cardCornerRadius="2dp">
 
     <LinearLayout
+        android:id="@+id/card_view_project_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -19,18 +21,17 @@
             android:id="@+id/icon_project"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
             android:contentDescription="@string/desc"
-            android:src="@drawable/icon_finish"/>
+            />
         <TextView
             android:id="@+id/name_project"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:textStyle="bold"
-            android:textColor="#ff0000"
+            android:textColor="@color/secondary_text"
             android:textSize="18sp"/>
 
     </LinearLayout>

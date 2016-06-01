@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.issue.IssueDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/activity_issue_detail_toobar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:background="@color/primary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_arrow_lef8"
+                    android:id="@+id/icon_navigation_left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginRight="20dp" />
+                <TextView
+                    android:id="@+id/activity_create_issue_add_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/icons"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toStartOf="@+id/activity_create_issue_icon_save" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/icon_edit2"
+                    android:id="@+id/activity_create_issue_icon_save"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/activity_issue_detail_toobar"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/content_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_table"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shape_table_top"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textIssueID"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="#162"
+                            android:textColor="#333333"
+                            android:textIsSelectable="true"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imgTracker"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20sp"
+                            android:src="@drawable/icon_switch" />
+
+                        <TextView
+                            android:id="@+id/textCreateDateFromNow"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:text="Added 1 days ago"
+                            android:textColor="#ff868686"
+                            android:textIsSelectable="true" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textSubject"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/shape_subject"
+                        android:padding="10dp"
+                        android:text="Test NV"
+                        android:textColor="#333333"
+                        android:textIsSelectable="true"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textDescription"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:padding="10dp"
+                        android:text="No comment"
+                        android:textColor="#333333"
+                        android:textIsSelectable="true" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_table"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Project" />
+
+                        <TextView
+                            android:id="@+id/textProject"
+                            style="@style/IssueDetailItemValue"
+                            android:text="Demo Application" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Status" />
+
+                        <TextView
+                            android:id="@+id/textStatus"
+                            style="@style/IssueDetailItemValue"
+                            android:text="New" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Periority" />
+
+                        <TextView
+                            android:id="@+id/textPriority"
+                            style="@style/IssueDetailItemValue"
+                            android:text="Normal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Assignee" />
+
+                        <TextView
+                            android:id="@+id/textAssignedTo"
+                            style="@style/IssueDetailItemValue"
+                            android:text="RedMine Admin" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="% Done" />
+
+                        <TextView
+                            android:id="@+id/textDoneRatio"
+                            style="@style/IssueDetailItemValue"
+                            android:text="50%" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Start date" />
+
+                        <TextView
+                            android:id="@+id/textStartDate"
+                            style="@style/IssueDetailItemValue"
+                            android:text="05/16/2016" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Due date" />
+
+                        <TextView
+                            android:id="@+id/textDueDate"
+                            style="@style/IssueDetailItemValue"
+                            android:text="05/16/2016" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Target vesion" />
+
+                        <TextView
+                            android:id="@+id/textFixedVersion"
+                            style="@style/IssueDetailItemValue" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Author" />
+
+                        <TextView
+                            android:id="@+id/textAuthorName"
+                            style="@style/IssueDetailItemValue"
+                            android:text="Redmine Admin" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Create date" />
+
+                        <TextView
+                            android:id="@+id/textCreateDate"
+                            style="@style/IssueDetailItemValue"
+                            android:text="4/29/2016 3:28 AM" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Last updated" />
+
+                        <TextView
+                            android:id="@+id/textUpdateDate"
+                            style="@style/IssueDetailItemValue"
+                            android:text="4/29/2016 3:49 AM" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Category" />
+
+                        <TextView
+                            android:id="@+id/textCategory"
+                            style="@style/IssueDetailItemValue" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textview14"
+                            style="@style/IssueDetailItemTitle"
+                            android:text="Estimated time" />
+
+                        <TextView
+                            android:id="@+id/textEstimatedHours"
+                            style="@style/IssueDetailItemValue"
+                            android:text="9.0" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutCustomFields"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"></LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutAttachment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

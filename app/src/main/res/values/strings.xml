@@ -15,4 +15,19 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="forgot_password">Forgot your password, Click here !!!</string>
+
+    <string name="issue_description">Description</string>
+    <string name="issue_status">Status</string>
+    <string name="issue_assigned">Assignee</string>
+    <string name="issue_priority">Priority</string>
+    <string name="issue_done_ratio">% Done</string>
+    <string name="issue_start_date">Start Date</string>
+    <string name="issue_due_date">Due Date</string>
+    <string name="issue_version">Target Version</string>
+    <string name="issue_category">Category</string>
+    <string name="issue_estimated_hours">Estimate time</string>
+    <string name="issue_parent">Parent task</string>
+    <string name="issue_detail_attach_button">Attachments</string>
+
+
 </resources>

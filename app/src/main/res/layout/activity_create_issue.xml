@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.issue.CreateIssueActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/activity_create_issue_toobar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:background="@color/primary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_arrow_lef8"
+                    android:id="@+id/icon_navigation_left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginRight="20dp" />
+                <TextView
+                    android:id="@+id/activity_create_issue_add_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/icons"
+                    android:text="Add Issue"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toStartOf="@+id/activity_create_issue_icon_save" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/icon_save"
+                    android:id="@+id/activity_create_issue_icon_save"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/activity_create_issue_toobar"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/content_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="30dp">
+
+                <LinearLayout
+                    android:id="@+id/btnProject"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="getListofProject">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="Project" />
+
+                    <TextView
+                        android:id="@+id/textProject"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="Demo Application" />
+
+                    <ImageView style="@style/arrow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/CellButtonEditLinearLayout"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="getListofTrackers">
+                    android:id="@+id/btnTracker">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="Tracker" />
+
+                    <TextView
+                        android:id="@+id/textTracker"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="Bug" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnSubject"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="onsetTextSubject">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:layout_weight="1.8"
+                        android:text="Subject" />
+
+                    <TextView
+                        android:id="@+id/textSubject"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="Project 006" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnDescription"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="onsetTexDescription">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:layout_weight="1.8"
+                        android:text="@string/issue_description" />
+
+                    <TextView
+                        android:id="@+id/textDescription"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="No description" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnStatus"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/selector_list_button"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="getListofStatus">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_status" />
+
+                    <TextView
+                        android:id="@+id/textStatus"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="New" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnAssignedTo"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="getListofMemberShip">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_assigned" />
+
+                    <TextView
+                        android:id="@+id/textAssignedTo"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="Nguyen Van" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnPriority"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="onsetTextPriority">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_priority" />
+
+                    <TextView
+                        android:id="@+id/textPriority"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="Low" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnDoneRatio"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="onSetDoneRatio"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_done_ratio" />
+
+                    <TextView
+                        android:id="@+id/textDoneRatio"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="50%" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnStartDate"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_start_date" />
+
+                    <TextView
+                        android:id="@+id/textStartDate"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="20/11/2011" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnDueDate"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_due_date" />
+
+                    <TextView
+                        android:id="@+id/textDueDate"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="21/11/2011" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnFixedVersion"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_version" />
+
+                    <TextView
+                        android:id="@+id/textFixedVersions"
+                        style="@style/CellButtonEditTextValue" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnCategory"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_category" />
+
+                    <TextView
+                        android:id="@+id/textCategorys"
+                        style="@style/CellButtonEditTextValue" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnEstimatedHours"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="onsetTextEstimate">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_estimated_hours" />
+
+                    <TextView
+                        android:id="@+id/textEstimatedHours"
+                        style="@style/CellButtonEditTextValue"
+                        android:text="2.0" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/btnParentIssueID"
+                    style="@style/CellButtonEditLinearLayout"
+                    android:background="@drawable/selector_list_button"
+                    android:onClick="onsetTextParentTask">
+
+                    <TextView
+                        style="@style/CellButtonEditTextTitle"
+                        android:text="@string/issue_parent" />
+
+                    <TextView
+                        android:id="@+id/textParentIssueID"
+                        style="@style/CellButtonEditTextValue" />
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutAttachments"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/selector_button_pressed"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <ImageView
+                        style="@style/IssueDetailItemIcon"
+                        android:src="@drawable/icon_attachments" />
+
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:gravity="center|left"
+                        android:paddingLeft="10dp"
+                        android:text="@string/issue_detail_attach_button"
+                        android:textColor="#5f739f"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3.0"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:paddingRight="6dp">
+
+                        <TextView
+                            android:id="@+id/textAttachmentCnt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="fill_vertical"
+                            android:background="@drawable/shape_attachment_cnt"
+                            android:text="0"
+                            android:textColor="#ffffff"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView style="@style/arrow" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

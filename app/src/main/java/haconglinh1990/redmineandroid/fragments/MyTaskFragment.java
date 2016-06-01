@@ -1,7 +1,6 @@
 package haconglinh1990.redmineandroid.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,10 +12,12 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import haconglinh1990.redmineandroid.models.Issue;
+import haconglinh1990.redmineandroid.models.Role;
 import haconglinh1990.redmineandroid.network.api.APIClient;
 import haconglinh1990.redmineandroid.R;
 import haconglinh1990.redmineandroid.adapters.RecyclerViewIssueAdapter;
-import haconglinh1990.redmineandroid.network.response.IssueCallBack;
+import haconglinh1990.redmineandroid.network.response.IssuesCallBack;
+import haconglinh1990.redmineandroid.network.response.RolesCallBack;
 
 
 public class MyTaskFragment extends Fragment {
@@ -26,9 +27,16 @@ public class MyTaskFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         Log.d(MY_TAG, "onCreated My Task Fragment before call API");
-        new APIClient(getContext()).getIssues(APIClient.API_ALL_ISSUSE_CURENT_USER_ASSIGNEE, new IssueCallBack() {
+
+        new APIClient(getContext()).getRoles(new RolesCallBack() {
+            @Override
+            public void onCompleted(int statusCode, ArrayList<Role> roleArrayList) {
+
+            }
+        });
+
+        new APIClient(getContext()).getIssues(APIClient.API_ISSUES_BY_CURENT_USER, new IssuesCallBack() {
             @Override
             public void onCompleted(int statusCode, ArrayList<Issue> issueArrayList) {
                 if (issueArrayList == null) {
@@ -40,9 +48,7 @@ public class MyTaskFragment extends Fragment {
                 }
             }
         });
-        // Inflate the layout for this fragment
-        //Log.d(MY_TAG, "onCreateView Project Fragment");
-        View view = inflater.inflate(R.layout.mytask_layout, container, false);
+        View view = inflater.inflate(R.layout.fragment_my_task, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewMyTask);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -50,11 +56,4 @@ public class MyTaskFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-
-        super.onActivityCreated(savedInstanceState);
-
-
-    }
 }

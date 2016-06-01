@@ -6,12 +6,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/voz2"
+        android:icon="@drawable/icon_voz2"
         android:label="MeoMeo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.authenticate.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,18 +21,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.RegisterActivity"
+            android:name=".activities.authenticate.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.ForgotPassWordActivity"
+            android:name=".activities.authenticate.ForgotPasswordActivity"
             android:label="@string/title_activity_forgot_pass_word"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.ultils.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.IssueInProjectActivity"></activity>
+        <activity android:name=".activities.project.ProjectActivity" />
+        <activity android:name=".activities.issue.IssueDetailActivity" />
+        <activity android:name=".activities.issue.CreateIssueActivity" />
+        <activity android:name=".activities.issue.EditIssueActivity"></activity>
     </application>
 
 </manifest>

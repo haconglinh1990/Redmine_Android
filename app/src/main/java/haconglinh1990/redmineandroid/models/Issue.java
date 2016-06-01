@@ -1,6 +1,8 @@
 
 package haconglinh1990.redmineandroid.models;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -47,12 +49,21 @@ public class Issue {
     @SerializedName("estimated_hours")
     @Expose
     private Double estimatedHours;
+    @SerializedName("spent_hours")
+    @Expose
+    private Double spentHours;
     @SerializedName("created_on")
     @Expose
     private String createdOn;
     @SerializedName("updated_on")
     @Expose
     private String updatedOn;
+    @SerializedName("attachments")
+    @Expose
+    private List<Object> attachments = new ArrayList<Object>();
+    @SerializedName("journals")
+    @Expose
+    private List<Journal> journals = new ArrayList<Journal>();
 
     /**
      * 
@@ -291,6 +302,24 @@ public class Issue {
     /**
      * 
      * @return
+     *     The spentHours
+     */
+    public Double getSpentHours() {
+        return spentHours;
+    }
+
+    /**
+     * 
+     * @param spentHours
+     *     The spent_hours
+     */
+    public void setSpentHours(Double spentHours) {
+        this.spentHours = spentHours;
+    }
+
+    /**
+     * 
+     * @return
      *     The createdOn
      */
     public String getCreatedOn() {
@@ -322,6 +351,42 @@ public class Issue {
      */
     public void setUpdatedOn(String updatedOn) {
         this.updatedOn = updatedOn;
+    }
+
+    /**
+     * 
+     * @return
+     *     The attachments
+     */
+    public List<Object> getAttachments() {
+        return attachments;
+    }
+
+    /**
+     * 
+     * @param attachments
+     *     The attachments
+     */
+    public void setAttachments(List<Object> attachments) {
+        this.attachments = attachments;
+    }
+
+    /**
+     * 
+     * @return
+     *     The journals
+     */
+    public List<Journal> getJournals() {
+        return journals;
+    }
+
+    /**
+     * 
+     * @param journals
+     *     The journals
+     */
+    public void setJournals(List<Journal> journals) {
+        this.journals = journals;
     }
 
 }

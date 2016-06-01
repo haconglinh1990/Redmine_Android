@@ -5,6 +5,8 @@ import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 @Generated("org.jsonschema2pojo")
 public class User {
 
@@ -20,9 +22,6 @@ public class User {
     @SerializedName("lastname")
     @Expose
     private String lastname;
-    @SerializedName("mail")
-    @Expose
-    private String mail;
     @SerializedName("created_on")
     @Expose
     private String createdOn;
@@ -32,12 +31,12 @@ public class User {
     @SerializedName("api_key")
     @Expose
     private String apiKey;
-    @SerializedName("status")
+    @SerializedName("memberships")
     @Expose
-    private Integer status;
+    private ArrayList<Membership> memberships = new ArrayList<Membership>();
 
     /**
-     * 
+     *
      * @return
      *     The id
      */
@@ -46,7 +45,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @param id
      *     The id
      */
@@ -55,7 +54,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @return
      *     The login
      */
@@ -64,7 +63,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @param login
      *     The login
      */
@@ -73,7 +72,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @return
      *     The firstname
      */
@@ -82,7 +81,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @param firstname
      *     The firstname
      */
@@ -91,7 +90,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @return
      *     The lastname
      */
@@ -100,7 +99,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @param lastname
      *     The lastname
      */
@@ -109,25 +108,7 @@ public class User {
     }
 
     /**
-     * 
-     * @return
-     *     The mail
-     */
-    public String getMail() {
-        return mail;
-    }
-
-    /**
-     * 
-     * @param mail
-     *     The mail
-     */
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    /**
-     * 
+     *
      * @return
      *     The createdOn
      */
@@ -136,7 +117,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @param createdOn
      *     The created_on
      */
@@ -145,7 +126,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @return
      *     The lastLoginOn
      */
@@ -154,7 +135,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @param lastLoginOn
      *     The last_login_on
      */
@@ -163,7 +144,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @return
      *     The apiKey
      */
@@ -172,7 +153,7 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @param apiKey
      *     The api_key
      */
@@ -181,21 +162,21 @@ public class User {
     }
 
     /**
-     * 
+     *
      * @return
-     *     The status
+     *     The memberships
      */
-    public Integer getStatus() {
-        return status;
+    public ArrayList<Membership> getMemberships() {
+        return memberships;
     }
 
     /**
-     * 
-     * @param status
-     *     The status
+     *
+     * @param memberships
+     *     The memberships
      */
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setMemberships(ArrayList<Membership> memberships) {
+        this.memberships = memberships;
     }
 
 }

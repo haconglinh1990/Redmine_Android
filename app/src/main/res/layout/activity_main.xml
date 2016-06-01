@@ -8,82 +8,95 @@
     android:fitsSystemWindows="true"
     android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical"
-    android:background="@drawable/bgcloud2"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.ultils.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabLayoutMainActivity"
+            android:id="@+id/activity_main_tabLayout"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:tabBackground="@drawable/tab_background"
+            />
 
         <android.support.v7.widget.Toolbar
 
-            android:id="@+id/toolbarMainActivity"
+            android:id="@+id/activity_main_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:layout_height="50dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:background="@color/primary"
+            android:minHeight="?attr/actionBarSize"
             android:theme="@style/AppTheme.AppBarOverlay"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
+
             <RelativeLayout
+                android:id="@+id/activity_main_toolbar_inner"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/icon_left"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:contentDescription="@string/desc"
-                    android:src="@drawable/voz3"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="REDMINE"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="#f03131"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:id="@+id/toolbar_title"
+                    android:id="@+id/activity_main_icon_app"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/icon_voz2"
                     android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentBottom="true" />
+                    android:layout_marginLeft="5dp" />
+                <TextView
+                    android:id="@+id/activity_main_tv_name_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="65dp"
+                    android:textColor="@color/icons"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:layout_toStartOf="@+id/activity_main_icon_search"
+                    android:layout_marginRight="10dp" />
 
                 <ImageView
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="20dp"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"
-                    android:contentDescription="@string/desc"
-                    android:src="@drawable/voz3"
-                    android:id="@+id/imageView" />
-
+                    android:id="@+id/activity_main_icon_search"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/icon_search3"
+                    android:layout_toStartOf="@+id/activity_main_icon_plus" />
+                <ImageView
+                    android:id="@+id/activity_main_icon_plus"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_plus2"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
 
             </RelativeLayout>
-
 
         </android.support.v7.widget.Toolbar>
 
         <android.support.v4.view.ViewPager
 
-            android:id="@+id/viewPagerMainActivity"
-            android:layout_above="@+id/tabLayoutMainActivity"
-            android:layout_below="@+id/toolbarMainActivity"
+            android:id="@+id/activity_main_viewPager"
+            android:layout_above="@+id/activity_main_tabLayout"
+            android:layout_below="@+id/activity_main_toolbar"
+            android:background="@color/icons"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
