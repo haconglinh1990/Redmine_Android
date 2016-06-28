@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@id/textAboutApp"
+        android:id="@+id/textAboutApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
@@ -19,7 +19,7 @@
         android:textStyle="bold" />
 
     <LinearLayout
-        android:id="@id/btnKeywordSearch"
+        android:id="@+id/btnKeywordSearch"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -67,7 +67,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@id/btnCustomQuery"
+        android:id="@+id/btnCustomQuery"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -91,7 +91,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@id/btnWatchList"
+        android:id="@+id/btnWatchList"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -115,7 +115,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@id/btnRoadmap"
+        android:id="@+id/btnRoadmap"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -139,7 +139,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@id/btnWiki"
+        android:id="@+id/btnWiki"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"

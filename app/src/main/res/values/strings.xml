@@ -28,6 +28,9 @@
     <string name="issue_estimated_hours">Estimate time</string>
     <string name="issue_parent">Parent task</string>
     <string name="issue_detail_attach_button">Attachments</string>
+    <string name="tracker">Tracker</string>
+    <string name="bug">Bug</string>
+    <string name="meo">meo</string>
 
 
 </resources>

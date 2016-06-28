@@ -28,7 +28,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@id/textServer"
+                android:id="@+id/textServer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="3dp"
@@ -98,7 +98,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@id/btnAccountSwitch"
+                android:id="@+id/btnAccountSwitch"
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
@@ -121,7 +121,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@id/textOptionSetup"
+                android:id="@+id/textOptionSetup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="3dp"
@@ -134,7 +134,7 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:id="@id/btnMstData"
+                android:id="@+id/btnMstData"
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"

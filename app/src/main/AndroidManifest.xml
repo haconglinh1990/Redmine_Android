@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.authenticate.LoginActivity"
+            android:name=".View.authenticate.LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,21 +21,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.authenticate.RegisterActivity"
+            android:name=".View.authenticate.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.authenticate.ForgotPasswordActivity"
+            android:name=".View.authenticate.ForgotPasswordActivity"
             android:label="@string/title_activity_forgot_pass_word"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.ultils.MainActivity"
+            android:name=".View.ultils.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.project.ProjectActivity" />
-        <activity android:name=".activities.issue.IssueDetailActivity" />
-        <activity android:name=".activities.issue.CreateIssueActivity" />
-        <activity android:name=".activities.issue.EditIssueActivity"></activity>
+        <activity android:name=".View.project.ProjectActivity" />
+        <activity android:name=".View.issue.IssueDetailActivity" />
+        <activity android:name=".View.issue.CreateIssueActivity"
+            />
+        <activity android:name=".View.issue.EditIssueActivity"></activity>
     </application>
 
 </manifest>

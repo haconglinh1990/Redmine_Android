@@ -8,7 +8,7 @@
     android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.issue.CreateIssueActivity">
+    tools:context=".View.issue.CreateIssueActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -42,7 +42,8 @@
                     android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginRight="20dp" />
+                    android:layout_marginRight="20dp"
+                    android:contentDescription="nagigationIcon" />
                 <TextView
                     android:id="@+id/activity_create_issue_add_name"
                     android:layout_width="match_parent"
@@ -80,18 +81,17 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/content_frame"
+                android:id="@+id/activity_create_content_frame"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="30dp">
 
                 <LinearLayout
-                    android:id="@+id/btnProject"
+                    android:id="@+id/activity_create_btnProject"
                     style="@style/CellButtonEditLinearLayout"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="getListofProject">
+                    android:background="@drawable/selector_list_button">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -100,36 +100,36 @@
                     <TextView
                         android:id="@+id/textProject"
                         style="@style/CellButtonEditTextValue"
-                        android:text="Demo Application" />
+                        android:text="Please choose" />
 
                     <ImageView style="@style/arrow" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/activity_create_btnTracker"
                     style="@style/CellButtonEditLinearLayout"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="getListofTrackers">
-                    android:id="@+id/btnTracker">
+                    android:background="@drawable/selector_list_button">
+                    >
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
-                        android:text="Tracker" />
+                        android:text="@string/tracker" />
 
                     <TextView
                         android:id="@+id/textTracker"
                         style="@style/CellButtonEditTextValue"
-                        android:text="Bug" />
+                        android:text="@string/bug" />
 
-                    <ImageView style="@style/arrow" />
+                    <ImageView style="@style/arrow"
+                        android:contentDescription="@string/meo" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/btnSubject"
                     style="@style/CellButtonEditLinearLayout"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="onsetTextSubject">
+                    android:background="@drawable/selector_list_button">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -139,16 +139,15 @@
                     <TextView
                         android:id="@+id/textSubject"
                         style="@style/CellButtonEditTextValue"
-                        android:text="Project 006" />
+                        android:text="New Issue" />
 
                     <ImageView style="@style/arrow" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnDescription"
+                    android:id="@+id/btnDescription"
                     style="@style/CellButtonEditLinearLayout"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="onsetTexDescription">
+                    android:background="@drawable/selector_list_button">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -164,12 +163,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnStatus"
+                    android:id="@+id/btnStatus"
                     style="@style/CellButtonEditLinearLayout"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/selector_list_button"
-                    android:nestedScrollingEnabled="false"
-                    android:onClick="getListofStatus">
+                    android:background="@drawable/selector_list_button">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -184,10 +181,9 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnAssignedTo"
+                    android:id="@+id/btnAssignedTo"
                     style="@style/CellButtonEditLinearLayout"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="getListofMemberShip">
+                    android:background="@drawable/selector_list_button">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -202,10 +198,9 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnPriority"
+                    android:id="@+id/btnPriority"
                     style="@style/CellButtonEditLinearLayout"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="onsetTextPriority">
+                    android:background="@drawable/selector_list_button">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -223,7 +218,6 @@
                     android:id="@+id/btnDoneRatio"
                     style="@style/CellButtonEditLinearLayout"
                     android:background="@drawable/selector_list_button"
-                    android:onClick="onSetDoneRatio"
                     android:orientation="horizontal">
 
                     <TextView
@@ -235,11 +229,12 @@
                         style="@style/CellButtonEditTextValue"
                         android:text="50%" />
 
+
                     <ImageView style="@style/arrow" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnStartDate"
+                    android:id="@+id/btnStartDate"
                     style="@style/CellButtonEditLinearLayout"
                     android:background="@drawable/selector_list_button">
 
@@ -256,7 +251,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnDueDate"
+                    android:id="@+id/btnDueDate"
                     style="@style/CellButtonEditLinearLayout"
                     android:background="@drawable/selector_list_button">
 
@@ -273,7 +268,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnFixedVersion"
+                    android:id="@+id/btnFixedVersion"
                     style="@style/CellButtonEditLinearLayout"
                     android:background="@drawable/selector_list_button">
 
@@ -289,26 +284,9 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnCategory"
+                    android:id="@+id/btnEstimatedHours"
                     style="@style/CellButtonEditLinearLayout"
                     android:background="@drawable/selector_list_button">
-
-                    <TextView
-                        style="@style/CellButtonEditTextTitle"
-                        android:text="@string/issue_category" />
-
-                    <TextView
-                        android:id="@+id/textCategorys"
-                        style="@style/CellButtonEditTextValue" />
-
-                    <ImageView style="@style/arrow" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@id/btnEstimatedHours"
-                    style="@style/CellButtonEditLinearLayout"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="onsetTextEstimate">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -323,10 +301,9 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@id/btnParentIssueID"
+                    android:id="@+id/btnParentIssueID"
                     style="@style/CellButtonEditLinearLayout"
-                    android:background="@drawable/selector_list_button"
-                    android:onClick="onsetTextParentTask">
+                    android:background="@drawable/selector_list_button">
 
                     <TextView
                         style="@style/CellButtonEditTextTitle"
@@ -339,56 +316,56 @@
                     <ImageView style="@style/arrow" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layoutAttachments"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/selector_button_pressed"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/layoutAttachments"-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:background="@drawable/selector_button_pressed"-->
+                    <!--android:clickable="true"-->
+                    <!--android:focusable="true"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:padding="5dp">-->
 
-                    <ImageView
-                        style="@style/IssueDetailItemIcon"
-                        android:src="@drawable/icon_attachments" />
+                    <!--<ImageView-->
+                        <!--style="@style/IssueDetailItemIcon"-->
+                        <!--android:src="@drawable/icon_attachments" />-->
 
-                    <TextView
-                        android:layout_width="160dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1.0"
-                        android:gravity="center|left"
-                        android:paddingLeft="10dp"
-                        android:text="@string/issue_detail_attach_button"
-                        android:textColor="#5f739f"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                    <!--<TextView-->
+                        <!--android:layout_width="160dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_weight="1.0"-->
+                        <!--android:gravity="center|left"-->
+                        <!--android:paddingLeft="10dp"-->
+                        <!--android:text="@string/issue_detail_attach_button"-->
+                        <!--android:textColor="#5f739f"-->
+                        <!--android:textSize="16sp"-->
+                        <!--android:textStyle="bold" />-->
 
-                    <LinearLayout
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3.0"
-                        android:gravity="right"
-                        android:orientation="horizontal"
-                        android:paddingRight="6dp">
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="240dp"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_weight="3.0"-->
+                        <!--android:gravity="right"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:paddingRight="6dp">-->
 
-                        <TextView
-                            android:id="@+id/textAttachmentCnt"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="fill_vertical"
-                            android:background="@drawable/shape_attachment_cnt"
-                            android:text="0"
-                            android:textColor="#ffffff"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
+                        <!--<TextView-->
+                            <!--android:id="@+id/textAttachmentCnt"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_gravity="fill_vertical"-->
+                            <!--android:background="@drawable/shape_attachment_cnt"-->
+                            <!--android:text="0"-->
+                            <!--android:textColor="#ffffff"-->
+                            <!--android:textSize="20sp"-->
+                            <!--android:textStyle="bold" />-->
+                    <!--</LinearLayout>-->
 
-                    <ImageView style="@style/arrow" />
-                </LinearLayout>
+                    <!--<ImageView style="@style/arrow" />-->
+                <!--</LinearLayout>-->
             </LinearLayout>
         </ScrollView>
 

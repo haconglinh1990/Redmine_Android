@@ -9,7 +9,7 @@
     android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.ultils.MainActivity">
+    tools:context=".View.ultils.MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,11 +30,8 @@
             android:id="@+id/activity_main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:contentInsetStart="0dp"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
-            android:contentInsetRight="0dp"
-            android:contentInsetEnd="0dp"
             app:contentInsetRight="0dp"
             app:contentInsetEnd="0dp"
             android:background="@color/primary"
